@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
@@ -12,6 +12,15 @@ def homepage():
 
 @app.route('/about')
 def about():
+    title = "About this site"
+    paragraph = ["This is a test framework that I am develping using Flask"]
+
+    pageType = 'about'
+
+    return render_template("index.html", title=title, paragraph=paragraph, pageType=pageType)
+
+@app.route('/about/contact')
+def contact():
     title = "About this site"
     paragraph = ["This is a test framework that I am develping using Flask"]
 
