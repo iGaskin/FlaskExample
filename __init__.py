@@ -28,6 +28,15 @@ def contact():
 
     return render_template("index.html", title=title, paragraph=paragraph, pageType=pageType)
 
+@app.route('/main')
+def main():
+    title = "About this site"
+    paragraph = ["This is a test framework that I am develping using Flask"]
+
+    pageType = 'about'
+
+    return render_template("main.html", title=title, paragraph=paragraph, pageType=pageType)
+
 @app.route('/graph')
 def graph_Example(chartID = 'chart_ID', chart_type = 'line', chart_height = 500):
         subtitleText = {"text:": "testies"}
